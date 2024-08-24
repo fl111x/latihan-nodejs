@@ -35,9 +35,11 @@ function simpan(nama, noHp, email) {
     console.log(`Nama contact sudah terdaftar silahkan daftarkan nama lain`);
     return false;
   }
-  if (!val.isEmail(email)) {
-    console.log(chalk.red.inverse.bold(`Email tidak valid`));
-    return false;
+  if (email) {
+    if (!val.isEmail(email)) {
+      console.log(chalk.red.inverse.bold(`Email tidak valid`));
+      return false;
+    }
   }
   if (!val.isMobilePhone(noHp, `id-ID`)) {
     console.log(chalk.red.inverse.bold(`Nomor HP tidak valid`));
